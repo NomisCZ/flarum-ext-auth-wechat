@@ -1,3 +1,6 @@
-app.initializers.add('nomiscz/flarum-ext-auth-wechat', () => {
-  console.log('[nomiscz/flarum-ext-auth-wechat] Hello, admin!');
+import app from 'flarum/app';
+import WeChatSettingsModal from './components/WeChatSettingsModal';
+
+app.initializers.add('nomiscz-auth-wechat', () => {
+    app.extensionSettings['nomiscz-auth-wechat'] = () => app.modal.show(new WeChatSettingsModal());
 });

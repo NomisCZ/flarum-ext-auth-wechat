@@ -58,9 +58,9 @@ class WeChatAuthController implements RequestHandlerInterface
         $redirectUri = $this->url->to('forum')->route('auth.wechat');
 
         $provider = new WeChat([
-            'clientId' => $this->settings->get('flarum-ext-auth-wechat.app_id'),
-            'clientSecret' => $this->settings->get('flarum-ext-auth-wechat.app_secret'),
-            'redirectUri' => $redirectUri,
+            'appid' => $this->settings->get('flarum-ext-auth-wechat.app_id'),
+            'secret' => $this->settings->get('flarum-ext-auth-wechat.app_secret'),
+            'redirect_uri' => $redirectUri,
         ]);
 
         $session = $request->getAttribute('session');
@@ -93,8 +93,8 @@ class WeChatAuthController implements RequestHandlerInterface
                     ->suggestUsername($user->getNickname())
                     ->setPayload($user->toArray());
 
-                if ($user->getImageUrl()) {
-                    $registration->provideAvatar($user->getImageUrl());
+                if ($user->getHeadImgUrl()) {
+                    $registration->provideAvatar($user->getHeadImgUrl());
                 }
             }
         );
