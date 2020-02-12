@@ -1,6 +1,6 @@
 # NomisCZ WeChat Login
 
-![License](https://img.shields.io/badge/license-MITNFA-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/nomiscz/flarum-ext-auth-wechat.svg)](https://packagist.org/packages/nomiscz/flarum-ext-auth-wechat)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/nomiscz/flarum-ext-auth-wechat.svg)](https://packagist.org/packages/nomiscz/flarum-ext-auth-wechat)
 
 A [Flarum](http://flarum.org) extension. Allow users to log in with WeChat
 
