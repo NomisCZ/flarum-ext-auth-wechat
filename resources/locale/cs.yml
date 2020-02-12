@@ -1,0 +1,9 @@
+nomiscz-auth-wechat:
+  forum:
+    buttons:
+      login: Přihlásit se přes WeChat
+  admin:
+    settings:
+      title: Nastavení WeChat přihlášení
+      api_app_id: API App ID
+      api_app_secret: API App Secret

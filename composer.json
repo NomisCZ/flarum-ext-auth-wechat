@@ -1,0 +1,39 @@
+{
+  "name": "nomiscz/flarum-ext-auth-wechat",
+  "description": "Allow users to log in with WeChat",
+  "keywords": [
+    "flarum",
+    "authentication"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": "^0.1.0-beta.8",
+    "oakhope/oauth2-wechat": "^1.0"
+  },
+  "authors": [
+    {
+      "name": "NomisCZ",
+      "email": "nomiscz@outlook.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "NomisCZ\\WeChatAuth\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "NomisCZ WeChat Login",
+      "icon": {
+        "name": "fab fa-weixin",
+        "backgroundColor": "#51c332",
+        "color": "#fff"
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
