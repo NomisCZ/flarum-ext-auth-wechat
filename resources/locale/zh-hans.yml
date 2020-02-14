@@ -1,0 +1,9 @@
+nomiscz-auth-wechat:
+  forum:
+    buttons:
+      login: 使用微信登录
+  admin:
+    settings:
+      title: 微信登录设置
+      api_app_id: API App ID
+      api_app_secret: API App Secret
