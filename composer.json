@@ -9,7 +9,7 @@
   "license": "MIT",
   "require": {
     "flarum/core": "^0.1.0-beta.8",
-    "oakhope/oauth2-wechat": "^1.0"
+    "nomiscz/oauth2-wechat": "dev-master"
   },
   "authors": [
     {
