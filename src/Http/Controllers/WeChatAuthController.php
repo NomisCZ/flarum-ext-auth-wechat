@@ -16,8 +16,8 @@ use Flarum\Forum\Auth\Registration;
 use NomisCZ\WeChatAuth\Flarum\Forum\Auth\NResponseFactory;
 use Flarum\Http\UrlGenerator;
 use Flarum\Settings\SettingsRepositoryInterface;
-use NomisCZ\OAuth2\Client\Provider\Wechat;
-use NomisCZ\OAuth2\Client\Provider\WechatResourceOwner;
+use NomisCZ\OAuth2\Client\Provider\WeChat;
+use NomisCZ\OAuth2\Client\Provider\WeChatResourceOwner;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -57,7 +57,7 @@ class WeChatAuthController implements RequestHandlerInterface
     {
         $redirectUri = $this->url->to('forum')->route('auth.wechat');
 
-        $provider = new Wechat([
+        $provider = new WeChat([
             'appid' => $this->settings->get('flarum-ext-auth-wechat.app_id'),
             'secret' => $this->settings->get('flarum-ext-auth-wechat.app_secret'),
             'redirect_uri' => $redirectUri,
@@ -83,7 +83,7 @@ class WeChatAuthController implements RequestHandlerInterface
         }
 
         $token = $provider->getAccessToken('authorization_code', compact('code'));
-        /** @var WechatResourceOwner $user */
+        /** @var WeChatResourceOwner $user */
         $user = $provider->getResourceOwner($token);
 
         return $this->response->make(
