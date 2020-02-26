@@ -12,7 +12,6 @@
 namespace NomisCZ\WeChatAuth\Api\Controllers;
 
 use Fig\Http\Message\StatusCodeInterface;
-use NomisCZ\WeChatAuth\Flarum\Forum\Auth\NResponseFactory;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
@@ -20,13 +19,11 @@ use Zend\Diactoros\Response\EmptyResponse;
 
 class WeChatUnlinkController implements RequestHandlerInterface
 {
-    protected $response;
-
-    public function __construct(NResponseFactory $response)
-    {
-        $this->response = $response;
-    }
-
+    /**
+     * @param ServerRequestInterface $request
+     * @return ResponseInterface
+     * @throws Exception
+     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $actor = $request->getAttribute('actor');

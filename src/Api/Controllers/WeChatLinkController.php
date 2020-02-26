@@ -11,7 +11,6 @@
 
 namespace NomisCZ\WeChatAuth\Api\Controllers;
 
-use NomisCZ\WeChatAuth\Flarum\Forum\Auth\NResponseFactory;
 use NomisCZ\OAuth2\Client\Provider\WeChat;
 use NomisCZ\OAuth2\Client\Provider\WeChatResourceOwner;
 use Psr\Http\Message\ResponseInterface;
@@ -25,19 +24,34 @@ use Flarum\Settings\SettingsRepositoryInterface;
 
 class WeChatLinkController implements RequestHandlerInterface
 {
-    protected $response;
+    /**
+     * @var LoginProvider
+     */
     protected $loginProvider;
-    protected $url;
+    /**
+     * @var SettingsRepositoryInterface
+     */
     protected $settings;
-
-    public function __construct(NResponseFactory $response, LoginProvider $loginProvider, SettingsRepositoryInterface $settings, UrlGenerator $url)
+    /**
+     * @var UrlGenerator
+     */
+    protected $url;
+    /**
+     * @param LoginProvider $loginProvider
+     * @param SettingsRepositoryInterface $settings
+     * @param UrlGenerator $url
+     */
+    public function __construct(LoginProvider $loginProvider, SettingsRepositoryInterface $settings, UrlGenerator $url)
     {
-        $this->response = $response;
         $this->loginProvider = $loginProvider;
         $this->settings = $settings;
         $this->url = $url;
     }
-
+    /**
+     * @param ServerRequestInterface $request
+     * @return ResponseInterface
+     * @throws Exception
+     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         $actor = $request->getAttribute('actor');
