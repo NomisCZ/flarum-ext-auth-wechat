@@ -20,16 +20,22 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 use Zend\Diactoros\Response\RedirectResponse;
 use Flarum\User\LoginProvider;
+use Flarum\Http\UrlGenerator;
+use Flarum\Settings\SettingsRepositoryInterface;
 
 class WeChatLinkController implements RequestHandlerInterface
 {
     protected $response;
     protected $loginProvider;
+    protected $url;
+    protected $settings;
 
-    public function __construct(NResponseFactory $response, LoginProvider $loginProvider)
+    public function __construct(NResponseFactory $response, LoginProvider $loginProvider, SettingsRepositoryInterface $settings, UrlGenerator $url)
     {
         $this->response = $response;
         $this->loginProvider = $loginProvider;
+        $this->settings = $settings;
+        $this->url = $url;
     }
 
     public function handle(ServerRequestInterface $request): ResponseInterface

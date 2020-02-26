@@ -34,4 +34,5 @@ return [
     ->post('/auth/wechat/unlink', 'auth.wechat.api.unlink', WeChatUnlinkController::class),
     function (Dispatcher $events) {
         $events->subscribe(AddUserLoginProviderAttribute::class);
+    }
 ];
