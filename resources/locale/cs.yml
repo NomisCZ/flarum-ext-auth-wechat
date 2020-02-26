@@ -2,6 +2,25 @@ nomiscz-auth-wechat:
   forum:
     buttons:
       login: Přihlásit se přes WeChat
+      link: Propojit WeChat účet
+      unlink: Odebrat WeChat účet
+    alerts:
+      already_linked: WeChat účet je již propojen!
+      already_used: Tento WeChat účet již má propojený jiný uživatel!
+      link_success: WeChat účet byl úspěšně propojen.
+      unlink_success: WeChat účet byl úspěšně odebrán.
+      error: Něco se pokazilo, zkuste to prosím znovu později!      
+    modals:
+      link:
+        title: Propojit WeChat účet
+      unlink:
+        title: Odebrat WeChat účet
+        info:
+          confirm: Opravdu si přeješ odebrat svůj WeChat účet?
+          no_providers: Nemáš žádné jiné poskytovatele přihlášení! Pravděpodobně si budeš muset obnovit heslo (jestli ho neznáš).
+        buttons:
+          confirm: Ano, odebrat účet
+          cancel: Ne!
   admin:
     settings:
       title: Nastavení WeChat přihlášení
