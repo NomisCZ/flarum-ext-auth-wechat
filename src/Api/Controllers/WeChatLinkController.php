@@ -61,7 +61,7 @@ class WeChatLinkController implements RequestHandlerInterface
             return $this->makeResponse('already_linked');
         }
 
-        $redirectUri = $this->url->to('forum')->route('auth.wechat');
+        $redirectUri = $this->url->to('api')->route('auth.wechat.api.link');
 
         $provider = new WeChat([
             'appid' => $this->settings->get('flarum-ext-auth-wechat.app_id'),
@@ -77,7 +77,7 @@ class WeChatLinkController implements RequestHandlerInterface
 
             $authUrl = $provider->getAuthorizationUrl();
             $session->put('oauth2state', $provider->getState());
-            return new RedirectResponse($authUrl.'&display=popup');
+            return new RedirectResponse($authUrl . '&display=popup');
         }
 
         $state = array_get($queryParams, 'state');
@@ -104,14 +104,14 @@ class WeChatLinkController implements RequestHandlerInterface
         return $this->makeResponse($created ? 'done' : 'error');
     }
 
-    private function makeResponse($returnCode = 'done') : HtmlResponse
+    private function makeResponse($returnCode = 'done'): HtmlResponse
     {
         $content = "<script>window.close();window.opener.app.wechat.wechatLinkComplete('{$returnCode}');</script>";
 
         return new HtmlResponse($content);
     }
 
-    private function checkLoginProvider($identifier) : bool
+    private function checkLoginProvider($identifier): bool
     {
         return $this->loginProvider->where([
             ['provider', 'wechat'],
