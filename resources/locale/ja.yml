@@ -23,6 +23,6 @@ nomiscz-auth-wechat:
           cancel: いいえ！  
   admin:
     settings:
-      title: 微信登录设置
+      title: WeChat 登録設定
       api_app_id: API App ID
       api_app_secret: API App Secret
