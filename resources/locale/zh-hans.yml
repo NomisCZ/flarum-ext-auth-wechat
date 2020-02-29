@@ -2,25 +2,25 @@ nomiscz-auth-wechat:
   forum:
     buttons:
       login: 使用微信登录
-      link: 绑定WeChat账号
-      unlink: 解绑WeChat账号
+      link: 绑定微信账号
+      unlink: 解绑微信账号
     alerts:
-      already_linked: WeChat账号已绑定！
-      already_used: WeChat账号已绑定至其他账号!
-      link_success: WeChat账号绑定成功.
-      unlink_success: WeChat账号解绑成功.
-      error: 有些地方出问题，请稍后再试!
+      already_linked: 微信账号已绑定！
+      already_used: 这个微信账号已被其他用户绑定！
+      link_success: 微信账号绑定成功！
+      unlink_success: 微信账号解绑成功！
+      error: 有些地方出了问题，请稍后再试！
     modals:
       link:
-        title: 绑定WeChat账号
+        title: 绑定微信账号
       unlink:
-        title: 解绑WeChat账号
+        title: 解绑微信账号
         info:
-          confirm: 你是否想要解绑你的WeChat账号?
-          no_providers: 你没有其他登录手段，请先重置账户密码.
+          confirm: 您确定要解绑微信账号吗？
+          no_providers: 您没有其他登录手段，请先重置账户密码。
         buttons:
           confirm: 是的，我确定
-          cancel: 不，我不确定!      
+          cancel: 不，我不确定！
   admin:
     settings:
       title: 微信登录设置
