@@ -1,7 +1,7 @@
 nomiscz-auth-wechat:
   forum:
     buttons:
-      login: WeChat でログイン
+      login: WeChat でログインする
       link: WeChat アカウントのリンク
       unlink: WeChat アカウントのリンク 解除
     alerts:
@@ -12,17 +12,17 @@ nomiscz-auth-wechat:
       error: 問題が発生しました。しばらくしてからもう一度お試しください！
     modals:
       link:
-        title: リンク WeChat アカウント
+        title: WeChat アカウントのリンク
       unlink:
         title: WeChat アカウントのリンク解除
         info:
-          confirm: 本当に、WeChat アカウントのリンクを解除しますか？
-          no_providers: 他のログインプロバイダーはありません！おそらくパスワードをリセットする必要があります。
+          confirm: WeChat アカウントのリンクを解除してもよろしいですか？
+          no_providers: あなたはログオンするための他の方法を持っていません。最初にアカウントのパスワードをリセットしてください。
         buttons:
-          confirm: はい、アカウントのリンクを解除します
-          cancel: いいえ！  
+          confirm: はい、確かです
+          cancel: キャンセル！  
   admin:
     settings:
-      title: WeChat 登録設定
+      title: WeChat ログイン - 設定
       api_app_id: API App ID
       api_app_secret: API App Secret
