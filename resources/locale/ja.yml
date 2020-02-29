@@ -3,12 +3,12 @@ nomiscz-auth-wechat:
     buttons:
       login: WeChat でログインする
       link: WeChat アカウントのリンク
-      unlink: WeChat アカウントのリンク 解除
+      unlink: WeChat アカウントのリンク解除
     alerts:
       already_linked: WeChat アカウントは既にリンクされています！
       already_used: WeChat アカウントはすでに別のユーザーにリンクされています！
-      link_success: WeChat アカウントのリンクが成功しました。
-      unlink_success: WeChat アカウントのリンク解除に成功しました。
+      link_success: WeChat アカウントのリンクが成功しました!
+      unlink_success: WeChat アカウントのリンク解除に成功しました!
       error: 問題が発生しました。しばらくしてからもう一度お試しください！
     modals:
       link:
