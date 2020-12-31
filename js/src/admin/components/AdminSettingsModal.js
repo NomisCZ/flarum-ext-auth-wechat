@@ -1,5 +1,5 @@
 import { settings } from '@fof-components';
-import { SettingsModal as FoFSettingsModal } from 'flarum/components/SettingsModal';
+import SettingsModal from 'flarum/components/SettingsModal';
 
 import config from '../../config';
 
@@ -7,7 +7,7 @@ const {
     items: { StringItem },
 } = settings;
 
-export default class SettingsModal extends FoFSettingsModal {
+export default class AdminSettingsModal extends SettingsModal {
     oninit(vnode) {
         super.oninit(vnode);
         this.setting = this.setting.bind(this);
