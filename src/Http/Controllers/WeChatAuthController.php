@@ -13,7 +13,7 @@ namespace NomisCZ\WeChatAuth\Http\Controllers;
 
 use Exception;
 use Flarum\Forum\Auth\Registration;
-use NomisCZ\WeChatAuth\Flarum\Forum\Auth\NResponseFactory;
+use Flarum\Forum\Auth\ResponseFactory;
 use Flarum\Http\UrlGenerator;
 use Flarum\Settings\SettingsRepositoryInterface;
 use NomisCZ\OAuth2\Client\Provider\WeChat;
@@ -26,7 +26,7 @@ use Zend\Diactoros\Response\RedirectResponse;
 class WeChatAuthController implements RequestHandlerInterface
 {
     /**
-     * @var NResponseFactory
+     * @var ResponseFactory
      */
     protected $response;
     /**
@@ -38,11 +38,11 @@ class WeChatAuthController implements RequestHandlerInterface
      */
     protected $url;
     /**
-     * @param NResponseFactory $response
+     * @param ResponseFactory $response
      * @param SettingsRepositoryInterface $settings
      * @param UrlGenerator $url
      */
-    public function __construct(NResponseFactory $response, SettingsRepositoryInterface $settings, UrlGenerator $url)
+    public function __construct(ResponseFactory $response, SettingsRepositoryInterface $settings, UrlGenerator $url)
     {
         $this->response = $response;
         $this->settings = $settings;
@@ -71,7 +71,7 @@ class WeChatAuthController implements RequestHandlerInterface
 
             $authUrl = $provider->getAuthorizationUrl();
             $session->put('oauth2state', $provider->getState());
-            return new RedirectResponse($authUrl.'&display=popup');
+            return new RedirectResponse($authUrl . '&display=popup');
         }
 
         $state = array_get($queryParams, 'state');
@@ -87,7 +87,8 @@ class WeChatAuthController implements RequestHandlerInterface
         $user = $provider->getResourceOwner($token);
 
         return $this->response->make(
-            'wechat', $user->getId(),
+            'wechat',
+            $user->getId(),
             function (Registration $registration) use ($user) {
                 $registration
                     ->suggestUsername($user->getNickname())

@@ -17,8 +17,11 @@ use NomisCZ\WeChatAuth\Api\Controllers\WeChatLinkController;
 use NomisCZ\WeChatAuth\Api\Controllers\WeChatUnlinkController;
 use NomisCZ\WeChatAuth\Listeners\AddUserLoginProviderAttribute;
 use Illuminate\Contracts\Events\Dispatcher;
+use FoF\Components\Extend\AddFofComponents;
 
 return [
+    new AddFofComponents(),
+
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')
         ->css(__DIR__.'/resources/less/forum.less'),
