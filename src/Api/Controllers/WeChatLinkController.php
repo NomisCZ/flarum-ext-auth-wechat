@@ -106,7 +106,7 @@ class WeChatLinkController implements RequestHandlerInterface
 
     private function makeResponse($returnCode = 'done'): HtmlResponse
     {
-        $content = "<script>window.close();window.opener.app.wechat.wechatLinkComplete('{$returnCode}');</script>";
+        $content = "<script>window.close();window.opener.app.wechat.linkComplete('{$returnCode}');</script>";
 
         return new HtmlResponse($content);
     }

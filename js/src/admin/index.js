@@ -1,6 +1,7 @@
 import app from 'flarum/app';
-import WeChatSettingsModal from './components/WeChatSettingsModal';
+import config from '../config';
+import SettingsModal from './components/SettingsModal';
 
-app.initializers.add('nomiscz-auth-wechat', () => {
-    app.extensionSettings['nomiscz-auth-wechat'] = () => app.modal.show(new WeChatSettingsModal());
+app.initializers.add(config.module.name, () => {
+    app.extensionSettings[config.module.name] = () => app.modal.show(SettingsModal);
 });
