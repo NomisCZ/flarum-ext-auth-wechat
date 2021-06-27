@@ -1,6 +1,8 @@
 import { settings } from '@fof-components';
 import ExtensionPage from 'flarum/components/ExtensionPage';
 
+import config from '../../config';
+
 const {
     items: { StringItem },
 } = settings;
