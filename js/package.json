@@ -10,5 +10,8 @@
   "scripts": {
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "flarum": "github:flarum/types#v1"
   }
 }

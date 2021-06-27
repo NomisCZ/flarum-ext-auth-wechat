@@ -3,7 +3,7 @@
 /*
  * This file is part of nomiscz/flarum-ext-auth-wechat.
  *
- * Copyright (c) 2020 NomisCZ.
+ * Copyright (c) 2021 NomisCZ.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -21,7 +21,7 @@ use NomisCZ\OAuth2\Client\Provider\WeChatResourceOwner;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\RedirectResponse;
+use Laminas\Diactoros\Response\RedirectResponse;
 
 class WeChatAuthController implements RequestHandlerInterface
 {
