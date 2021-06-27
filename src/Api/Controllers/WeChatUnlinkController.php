@@ -3,7 +3,7 @@
 /*
  * This file is part of nomiscz/flarum-ext-auth-wechat.
  *
- * Copyright (c) 2020 NomisCZ.
+ * Copyright (c) 2021 NomisCZ.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -15,7 +15,7 @@ use Fig\Http\Message\StatusCodeInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\EmptyResponse;
+use Laminas\Diactoros\Response\EmptyResponse;
 
 class WeChatUnlinkController implements RequestHandlerInterface
 {
@@ -29,12 +29,12 @@ class WeChatUnlinkController implements RequestHandlerInterface
         $actor = $request->getAttribute('actor');
         $actorLoginProviders = $actor->loginProviders()->where('provider', 'wechat')->first();
 
-        if ($actorLoginProviders) {
-            
-            $actorLoginProviders->delete();
-            return new EmptyResponse(StatusCodeInterface::STATUS_OK);
+        if (!$actorLoginProviders) {
+            return new EmptyResponse(StatusCodeInterface::STATUS_BAD_REQUEST);
         }
 
-        return new EmptyResponse(StatusCodeInterface::STATUS_BAD_REQUEST);
+        $actorLoginProviders->delete();
+
+        return new EmptyResponse(StatusCodeInterface::STATUS_OK);
     }
 }

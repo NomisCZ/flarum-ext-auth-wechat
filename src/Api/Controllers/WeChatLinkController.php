@@ -3,7 +3,7 @@
 /*
  * This file is part of nomiscz/flarum-ext-auth-wechat.
  *
- * Copyright (c) 2020 NomisCZ.
+ * Copyright (c) 2021 NomisCZ.
  *
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
@@ -16,8 +16,8 @@ use NomisCZ\OAuth2\Client\Provider\WeChatResourceOwner;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\RedirectResponse;
+use Laminas\Diactoros\Response\HtmlResponse;
+use Laminas\Diactoros\Response\RedirectResponse;
 use Flarum\User\LoginProvider;
 use Flarum\Http\UrlGenerator;
 use Flarum\Settings\SettingsRepositoryInterface;
@@ -106,7 +106,7 @@ class WeChatLinkController implements RequestHandlerInterface
 
     private function makeResponse($returnCode = 'done'): HtmlResponse
     {
-        $content = "<script>window.close();window.opener.app.wechat.linkComplete('{$returnCode}');</script>";
+        $content = "<script>window.close();window.opener.app.wechat.linkDone('{$returnCode}');</script>";
 
         return new HtmlResponse($content);
     }

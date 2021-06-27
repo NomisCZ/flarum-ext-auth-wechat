@@ -1,4 +1,4 @@
-export default config = {
+export default {
   module: {
     name: 'nomiscz-auth-wechat',
     id: 'WeChatAuth',
