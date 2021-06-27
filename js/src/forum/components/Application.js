@@ -1,7 +1,7 @@
 import config from '../../config';
 
 export default class Application {
-    linkComplete(returnCode) {
+    linkDone(returnCode) {
 
         let alert;
 
