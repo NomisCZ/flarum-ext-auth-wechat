@@ -24,7 +24,7 @@ export default class SettingsPage extends ExtensionPage {
                         >
                             {app.translator.trans(`${config.module.name}.admin.settings.api_app_id`)}
                         </StringItem>
-                    </div>,
+                    </div>
                     <div className="Form-group">
                         <StringItem
                             name={`${config.package.name}.app_secret`}
@@ -35,7 +35,7 @@ export default class SettingsPage extends ExtensionPage {
                         </StringItem>
                     </div>
                     {this.submitButton()}
-                </div>,
+                </div>
             </div>
         ];
     }
